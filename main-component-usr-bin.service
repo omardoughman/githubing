@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 # Replace 'omar' with your actual username
-User=omar
+User=omardoughman
 WorkingDirectory=/Volumes/td rev/ta3al/windowstmacos
 ExecStart=/usr/bin/python3 /Volumes/td rev/ta3al/windowstmacos/spow.py
 Restart=always
