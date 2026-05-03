@@ -1,0 +1,6 @@
+[Unit]
+Description=Full Spow Service Suite
+Requires=spow-gui.service spow-logger.service spow-watcher.service
+
+[Install]
+WantedBy=multi-user.target
