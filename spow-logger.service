@@ -1,0 +1,12 @@
+[Unit]
+Description=Spow Background Event Logger
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/python3 /app/logger_script.py
+StandardOutput=append:/var/log/spow_events.log
+StandardError=inherit
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
