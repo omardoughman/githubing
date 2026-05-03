@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS clutter
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
