@@ -1,0 +1,21 @@
+# system files
+.DS_Store
+
+# logs
+*.log
+
+# node / python (if you use them)
+node_modules/
+__pycache__/
+*.pyc
+
+# build output
+dist/
+build/
+
+# env files (VERY important)
+.env
+
+# IDE files
+.vscode/
+.idea/
