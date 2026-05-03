@@ -1,0 +1,12 @@
+[Unit]
+Description=Spow GUI Interface
+After=network.target
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/python3 /app/spow.py
+Restart=always
+User=omar
+
+[Install]
+WantedBy=graphical.target
