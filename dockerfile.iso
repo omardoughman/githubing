@@ -1,0 +1,17 @@
+# Use a light version of Linux
+FROM debian:bookworm-slim
+
+# Install the "Magic" tool to make ISOs
+RUN apt-get update && apt-get install -y genisoimage
+
+# Set the working directory
+WORKDIR /build_zone
+
+# Copy your scripts from GitHub into the container
+COPY . .
+
+# Make the magic script executable
+RUN chmod +x build_iso.sh
+
+# When the container starts, run the script!
+CMD ["./build_iso.sh"]
