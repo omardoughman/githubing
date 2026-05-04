@@ -1,0 +1,17 @@
+/ {
+    pin-controller {
+        /* Example: Defining the Virtual Floppy Activity LED */
+        floppy_led_pin: floppy-led {
+            pins = "gpio0_2";
+            function = "output";
+            drive-strength = <8>;
+        };
+
+        /* Example: Defining a Writable Data Trigger */
+        data_write_pin: data-write {
+            pins = "gpio0_5";
+            function = "input";
+            bias-pull-up;
+        };
+    };
+};
