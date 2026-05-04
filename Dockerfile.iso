@@ -1,0 +1,23 @@
+FROM debian:bookworm-slim
+
+# Install necessary tools for ISO and IMG creation
+RUN apt-get update && apt-get install -y \
+    genisoimage \
+    dosfstools \
+    mtools \
+    parted \
+    udev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
+WORKDIR /build_zone
+
+# Copy all files from your current local directory into the container
+COPY . .
+
+# Ensure the build script is executable
+# Note: I am using build_iso.sh to match your previous logic
+RUN chmod +x build_iso.sh
+
+# Run the build script when the container starts
+CMD ["./build_iso.sh"]
