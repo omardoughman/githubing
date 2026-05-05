@@ -1,21 +1,7 @@
-const http = require("http");
-const https = require("http");
+'use strict'
 
-http.createServer(async (req, res) => {
-
-  if (req.url === "/call-python") {
-
-    fetch("http://python:5000/api/data")
-      .then(r => r.json())
-      .then(data => {
-        res.end("Node received: " + JSON.stringify(data));
-      })
-      .catch(err => {
-        res.end("Error: " + err.message);
-      });
-
-  } else {
-    res.end("Node running");
-  }
-
-}).listen(3000);
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./dist/compiler-core.cjs.prod.js')
+} else {
+  module.exports = require('./dist/compiler-core.cjs.js')
+}
